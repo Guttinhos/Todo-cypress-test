@@ -1,0 +1,30 @@
+
+
+Funcionalidade : Lista de Afazeres 
+  Como um usuário
+  Eu quero poder gerenciar minhas tarefas
+  para que eu possa melhorar minha produção
+
+-- Fluxo Principal -- 
+
+  Cenário 1: Adicionar uma tarefa
+    Dado que estou na página de tarefas
+    Quando eu adicionar a tarefa 'Aprender cypress'
+    então a tarefa 'Aprender cypress' deve ser exibida na Lista
+  
+  Cenário 2: Concluir uma tarefa
+    Dado que estou na página de tarefas
+    Quando eu marcar a tarefa 'tarefa_concluída' como concluída
+    então a tarefa 'tarefa_concluída' deve ser marcada como concluída na Lista
+  
+  Cenário 3: Excluir uma tarefa
+    Dado que estou na página de tarefas
+    Quando eu excluir a tarefa "Aprender cypress"
+    Então a tarefa "Aprender cypress" não deve mais estar na lista
+
+-- Fluxo negativo -- 
+
+  Cenário: Tentar adicionar uma nova tarefa com campos inválidos
+    Dado que estou na página de tarefas
+    Quando eu tento adicionar uma nova tarefa com o campo em branco
+    Então a nova tarefa não deve ser adicionada à lista
