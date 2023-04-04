@@ -31,7 +31,9 @@ describe('Lista de Afazeres', () => {
   })
 
   it('Não deve ser aceito caracteres invalidos ', () => {
-    cy.get('#todo_title').type('$#@%^^#$#@')
     cy.get('.bg-white > .col-auto > .btn').click()
+    cy.on('window:alert', (str) => {
+      expect(str).to.equal('Digite um título para a tarefa!')
+    })
   })
 })
